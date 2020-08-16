@@ -1,0 +1,40 @@
+name: Build
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_USER: runner
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_HOST_AUTH_METHOD: trust
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+        - 5432:5432
+    steps:
+    - name: Set up Java
+      uses: actions/setup-java@v1.4.1
+      with:
+        java-version: 14-ea
+    - name: Set up Clojure
+      uses: DeLaGuardo/setup-clojure@2.0
+      with:
+        tools-deps: '1.10.1.469'
+    - name: Checkout
+      uses: actions/checkout@v2.3.2
+    - name: Cache
+      uses: actions/cache@v2.1.0
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('deps.edn') }}
+        restore-keys: |
+          ${{ runner.os }}-maven-
+    - name: Test
+      run: clojure -A:dev:test

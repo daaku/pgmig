@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+shopt -s dotglob nullglob
+trap 'echo "${0} line ${LINENO} Status: ${?}"' ERR
+
+export ARTIFACT=pgmig
+export GROUP=org.clojars.daaku
+export VERSION=1.0.0
+
+rm -f pom.xml
+clojure -A:dev:test
+clojure -Spom
+sed -i \
+    -e "s#<groupId>pgmig</groupId>#<groupId>$GROUP</groupId>#" \
+    -e "s#<version>0.1.0</version>#<version>$VERSION</version>#" \
+    pom.xml
+clojure -A:jar
+mvn deploy:deploy-file \
+    -Dfile=$ARTIFACT.jar \
+    -DpomFile=pom.xml \
+    -DrepositoryId=clojars \
+    -Durl=https://clojars.org/repo/
+rm $ARTIFACT.jar
+rm pom.xml

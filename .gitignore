@@ -1,0 +1,6 @@
+/.clj-kondo/.cache
+/.nrepl-port
+/.rebel_readline_history
+/pgmig.jar
+/pom.xml
+/target
