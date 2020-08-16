@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>pgmig</groupId>
+  <artifactId>pgmig</artifactId>
+  <version>1.0.0</version>
+  <name>pgmig</name>
+  <dependencies>
+    <dependency>
+      <groupId>org.clojure</groupId>
+      <artifactId>clojure</artifactId>
+      <version>1.10.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>42.2.15</version>
+    </dependency>
+    <dependency>
+      <groupId>seancorfield</groupId>
+      <artifactId>next.jdbc</artifactId>
+      <version>1.1.582</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+  </build>
+  <repositories>
+    <repository>
+      <id>clojars</id>
+      <url>https://repo.clojars.org/</url>
+    </repository>
+  </repositories>
+  <scm>
+    <connection>scm:git:git://github.com/daaku/pgmig</connection>
+    <developerConnection>scm:git:ssh://git@github.com/daaku/pgmig</developerConnection>
+    <url>https://github.com/daaku/pgmig</url>
+  </scm>
+</project>
