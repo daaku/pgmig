@@ -15,8 +15,4 @@
          :main-opts ["-m" "kaocha.runner" "--plugin" "cloverage"]}
 
   :jar {:extra-deps {seancorfield/depstar {:mvn/version "1.0.97"}}
-        :main-opts ["-m" "hf.depstar.jar" "pgmig.jar"]}
-
-  :deploy {:extra-deps {deps-deploy {:mvn/version "RELEASE"}}
-           :main-opts ["-m" "deps-deploy.deps-deploy" "deploy"
-                       "pgmig.jar"]}}}
+        :main-opts ["-m" "hf.depstar.jar" "pgmig.jar"]}}}
