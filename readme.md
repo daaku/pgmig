@@ -7,7 +7,7 @@ Database migrations for
 
 
 [![Documentation](https://cljdoc.org/badge/daaku/pgmig)](https://cljdoc.org/d/daaku/pgmig/CURRENT)
+[![Clojars](https://img.shields.io/clojars/v/daaku/pgmig.svg)](https://clojars.org/daaku/pgmig)
 [![Build](https://github.com/daaku/pgmig/workflows/build/badge.svg)](https://github.com/daaku/pgmig/actions?query=workflow%3Abuild)
-[![Clojars](https://clojars.org/daaku/pgmig/latest-version.svg)](https://clojars.org/daaku/pgmig)
 
 Documentation: https://cljdoc.org/d/daaku/pgmig
