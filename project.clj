@@ -1,4 +1,4 @@
-(defproject daaku/pgmig "1.0.1"
+(defproject daaku/pgmig "1.0.2"
   :description "Database migrations for PostgreSQL using next.jdbc."
   :url "https://github.com/daaku/pgmig"
   :scm {:name "git" :url "https://github.com/daaku/pgmig"}
