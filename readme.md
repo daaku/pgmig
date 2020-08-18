@@ -38,7 +38,7 @@ To use it:
   (:require [clojure.java.io :as io]
             [pgmig :as pgmig]))
 
-(def db-spec {:dbtype "postgres" :dbname "myapp})
+(def db-spec {:dbtype "postgres" :dbname "myapp"})
 
 (def migrations
   (delay (pgmig/migrations-from-dir (io/resource "myapp/migrations"))))
