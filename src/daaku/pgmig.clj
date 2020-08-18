@@ -1,4 +1,4 @@
-(ns pgmig
+(ns daaku.pgmig
   (:require [clojure.java.io :as io]
             [clojure.string :as string]
             [next.jdbc :as jdbc]))

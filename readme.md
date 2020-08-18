@@ -36,7 +36,7 @@ To use it:
 ```clojure
 (ns myapp
   (:require [clojure.java.io :as io]
-            [pgmig :as pgmig]))
+            [daaku.pgmig :as pgmig]))
 
 (def db-spec {:dbtype "postgres" :dbname "myapp"})
 

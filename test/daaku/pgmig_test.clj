@@ -1,11 +1,11 @@
-(ns pgmig-test
-  {:clj-kondo/config '{:lint-as {pgmig-test/with-test-ds
+(ns daaku.pgmig-test
+  {:clj-kondo/config '{:lint-as {daaku.pgmig-test/with-test-ds
                                  clj-kondo.lint-as/def-catch-all}}}
 
   (:require [clojure.java.io :as io]
             [clojure.test :refer [deftest is]]
-            [next.jdbc :as jdbc]
-            [pgmig :as pgmig]))
+            [daaku.pgmig :as pgmig]
+            [next.jdbc :as jdbc]))
 
 (def db-count (atom 0))
 
