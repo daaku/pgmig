@@ -1,4 +1,7 @@
 (ns pgmig-test
+  {:clj-kondo/config '{:lint-as {pgmig-test/with-test-ds
+                                 clj-kondo.lint-as/def-catch-all}}}
+
   (:require [clojure.java.io :as io]
             [clojure.test :refer [deftest is]]
             [next.jdbc :as jdbc]
