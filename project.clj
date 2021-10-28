@@ -3,6 +3,6 @@
   :url "https://github.com/daaku/pgmig"
   :scm {:name "git" :url "https://github.com/daaku/pgmig"}
   :license {:name "MIT License"}
-  :dependencies [[org.clojure/clojure "1.10.1"]
-                 [org.postgresql/postgresql "42.2.15"]
-                 [seancorfield/next.jdbc "1.1.582"]])
+  :dependencies [[org.clojure/clojure "1.10.3"]
+                 [org.postgresql/postgresql "42.3.0"]
+                 [seancorfield/next.jdbc "1.2.659"]])
