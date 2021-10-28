@@ -13,7 +13,7 @@
 
 (defn- pending [done migrations]
   (dorun (map (fn [{:keys [pgmig_migrate/migration]} {:keys [name]}]
-                (if-not (= name migration)
+                (when-not (= name migration)
                   (throw (ex-info "unexpected migration"
                                   {:expected name :actual migration}))))
               done migrations))
@@ -37,7 +37,8 @@
         entries (.entries jar)]
     (loop [result []]
       (if (.hasMoreElements entries)
-        (let [name (.. entries nextElement getName)]
+        (let [el ^java.util.jar.JarEntry (.nextElement entries)
+              name (.getName el)]
           (recur (if (and (string/starts-with? name prefix)
                           (string/ends-with? name ".sql"))
                    (conj result {:name (subs name (count prefix))
